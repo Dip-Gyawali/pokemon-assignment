@@ -21,6 +21,12 @@
     <div class="mt-4 mb-5 d-flex justify-content-between align-items-center">
       <h1 class="text-white">Get your Pokemon!</h1>
       <div>
+      <button class="btn btn-primary"><i class="fa-solid fa-i-cursor"></i></button>
+      <button class="btn btn-primary"><i class="fa-solid fa-c"></i></button>
+      <button class="btn btn-primary"><i class="fa-brands fa-opera"></i></button>
+      <button class="btn btn-primary"><i class="fa-solid fa-n"></i></button>
+      </div>
+      <div>
         <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Login</button>
         <button class="btn btn-success"> <i class="fa-solid fa-user-large"></i> Sign Up</button>
       </div>
@@ -44,7 +50,8 @@
                <td>
                 <img src="<?= $element["image"]["thumbnail"]?>" alt="">
                </td>
-               <td><?= $element["name"]["english"]; ?></td>
+               <td><?= $element["name"]["english"]?>
+               </td>
                <td class="text-uppercase"><?= ($element["species"])?></td>
                <td><?= $element["description"]?></td>
                <td><?=$element["profile"]["weight"] ?></td>
@@ -59,6 +66,7 @@
 
   </div>
   <!-- DNT MAKE ANY CHANGES ON THE CODE BELOW -->
+   <script src="./script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
   </script>
