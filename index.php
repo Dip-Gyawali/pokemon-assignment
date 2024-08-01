@@ -1,3 +1,8 @@
+<?php
+ $json = file_get_contents("./data.json");
+ $data = json_decode($json,true);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,8 +21,8 @@
     <div class="mt-4 mb-5 d-flex justify-content-between align-items-center">
       <h1 class="text-white">Get your Pokemon!</h1>
       <div>
-        <button class="btn btn-primary">
-          <i class="fa fa-sign-in"></i> Login</button>
+        <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Login</button>
+        <button class="btn btn-success"> <i class="fa-solid fa-user-large"></i> Sign Up</button>
       </div>
     </div>
     <table class="table table-dark">
@@ -33,8 +38,22 @@
         </tr>
       </thead>
       <tbody>
-
         <!-- Write your code here -->
+         <?php foreach($data as $element): ?>
+           <tr>
+               <td>
+                <img src="<?= $element["image"]["thumbnail"]?>" alt="">
+               </td>
+               <td><?= $element["name"]["english"]; ?></td>
+               <td class="text-uppercase"><?= ($element["species"])?></td>
+               <td><?= $element["description"]?></td>
+               <td><?=$element["profile"]["weight"] ?></td>
+               <td><?= $element["profile"]["height"]?></td>
+               <td>
+               <button class="btn btn-outline-success"><i class="fa-solid fa-biohazard"></i>Collect</button>
+               </td>
+           </tr>
+           <?php endforeach; ?>
       </tbody>
     </table>
 
